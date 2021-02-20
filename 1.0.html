@@ -13,17 +13,28 @@
  	 <body>
      <form id = data>
 
+   <form oninput="result.value = 5">
 
-
-	<b>введите 2 множества</b><br><br>
+	 <b>введите 2 множества</b><br><br>
 	 введите 1 множество <input type="text" name="first" placeholder="..." id="first"> <br><br>
 	 введите 2 множество <input type="text" name="second" placeholder="..." id="second"> <br><br>
 
 
   	 <input type="reset">
-     <button onclick ="calc();"> Расчитать </button> <br><br>
+     <button type="button" onclick ="check(), calc(), intersection(), difference(), sim_difference();"> Расчитать </button> <br><br>
 
-     <output for="res">0</output>
+
+
+     <p id="one">Объединение: <p/>
+
+     <p id="two">Пересечение: <p/>
+
+     <p id="three">Дополнение: <p/>
+
+     <p id="four">Симметрическая разность: <p/>
+
+
+
 
 </form>
 
