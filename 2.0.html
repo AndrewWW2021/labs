@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+	    <meta charset= "utf-8">
+  	  <title>Lab 1</title>
+
+      <script src="funcMath1.js"></script>
+
+   </head>
+
+<body bgcolor="#ebc766">
+ 	 <body>
+     <form id = data>
+
+   <form oninput="result.value = 5">
+
+	 <b>введите матрицу типа NxN</b><br><br>
+   N: <input type="text" pattern="[0-9]" name="first" placeholder="..." id="first"> <br><br>
+	 Матрица: <input type="text" name="second" placeholder="..." id="second"> <br><br>
+
+
+
+  	 <input type="reset">
+     <button type="button" onclick ="calc();"> Расчитать </button> <br><br>
+
+     <p id="one">рефлексивность: <p/>
+
+     <p id="two">симметричность: <p/>
+
+     <p id="three">кососимметричность: <p/>
+
+     <p id="four">транзитивность: <p/>
+
+
+
+</form>
+
+	 </body>
+
+</html>
