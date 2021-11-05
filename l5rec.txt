@@ -1,0 +1,112 @@
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JSpinner;
+
+public class lab5homeWindow {
+
+	private JFrame frame;
+	private JTextField textField;
+	private l5home worker = new l5home();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					lab5homeWindow window = new lab5homeWindow();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public lab5homeWindow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 630, 475);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(216, 138, 180, 92);
+		frame.getContentPane().add(textArea);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setBounds(84, 282, 30, 22);
+		frame.getContentPane().add(spinner);
+		
+		JButton btnNewButton = new JButton("Sh_x");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double x = (Integer) spinner.getValue();
+				
+				worker.sh(x, 13);
+				
+				String kek = String.valueOf(worker.sh(x, 13));
+
+				textArea.setText(kek);
+			}				
+		});
+		btnNewButton.setBounds(47, 132, 97, 25);
+		frame.getContentPane().add(btnNewButton);
+		
+		
+		
+		
+		
+		
+	}
+}
+
+
+
+
+
+
+----------------------------------------
+
+
+
+public class l5home {
+
+	public static void main(String[] args) {
+		System.out.println(sh(5, 13));
+	}
+	
+	
+	public static double sh(double x, int m) {
+		if (m <= 1) {
+			return x;
+		}
+		double chislitel = Math.pow(x, m);
+		double znam = factorial(m);
+		double res = chislitel / znam;
+		return res + sh(x, m - 2);
+	}
+	
+	public static int factorial(int x) {
+		return x <=0 ? 1 : x * factorial(x - 1);
+	}
+}
+
